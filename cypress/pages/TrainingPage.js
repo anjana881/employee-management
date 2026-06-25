@@ -14,21 +14,26 @@ class TrainingPage {
     approveBtn: (module) => cy.get(`[data-cy="training-approve-${module}"]`),
   };
 
+ 
+  // visits the training assignment page
   visitAssignPage() {
     cy.visit("/training/assign");
     return this;
   }
 
+  // visits specific employee's training record
   visitEmployeeRecord(email) {
     cy.visit(`/employees/${email}/training`);
     return this;
   }
 
+  // visits the training approval queue
   visitApprovalQueue() {
     cy.visit("/training/approvals");
     return this;
   }
 
+  // assigns a training module to employee
   assignTraining(employeeEmail, moduleName) {
     this.visitAssignPage();
     this.elements.assignTrainingBtn().click();
@@ -38,11 +43,13 @@ class TrainingPage {
     return this;
   }
 
+  // marks a training module as completed
   completeTraining(moduleName) {
     this.elements.completeTrainingBtn(moduleName).click();
     return this;
   }
 
+  // approves a completed training module
   approveTraining(moduleName) {
     this.elements.approveBtn(moduleName).click();
     return this;

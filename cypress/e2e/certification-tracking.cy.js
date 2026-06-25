@@ -11,10 +11,10 @@ describe("Certification Tracking", () => {
     cy.fixture("users").then((data) => {
       certificationObj.visitExpiringAlerts();
 
-      // Assertion for expiring list to be visible and not empty
+      // assertion for expiring list to be visible and not empty
       certificationObj.elements.expiringList().should("be.visible");
 
-      // Assertion for the expiring badge to be visible and contain the correct text
+      // assertion for the expiring badge to be visible and contain the correct text
       certificationObj.elements
         .expiringBadge(data.certification.expiringCertName)
         .should("be.visible")

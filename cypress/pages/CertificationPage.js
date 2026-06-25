@@ -6,7 +6,9 @@ class CertificationPage {
       cy.get(`[data-cy="cert-expiring-badge-${certName}"]`),
   };
 
-  // ---- Actions ----
+
+
+  // visits the certifications expiring page and clicks the expiring alerts tab
   visitExpiringAlerts() {
     cy.visit("/certifications/expiring");
     this.elements.expiringAlertsTab().click();

@@ -7,7 +7,7 @@ describe("OJT Completion Workflow", () => {
     cy.fixture("users").then((data) => {
       const { assignedEmployeeEmail, moduleName } = data.training;
 
-      // Supervisor assigns the training first (setup step)
+      // Supervisor assigns the training
       cy.loginAsSupervisor();
       trainingObj.assignTraining(assignedEmployeeEmail, moduleName);
 
@@ -16,7 +16,7 @@ describe("OJT Completion Workflow", () => {
       trainingObj.visitEmployeeRecord(assignedEmployeeEmail);
       trainingObj.completeTraining(moduleName);
 
-      // Assertion: status reflects completion is recorded and awaiting approval
+      // asserition for status to shown completion is recorded and awaiting approval
       trainingObj.elements
         .trainingStatus(moduleName)
         .should("be.visible")
@@ -28,7 +28,7 @@ describe("OJT Completion Workflow", () => {
     cy.fixture("users").then((data) => {
       const { assignedEmployeeEmail, moduleName } = data.training;
 
-      // Setup: assign module to employee
+      // assign module to employee
       cy.loginAsSupervisor();
       trainingObj.assignTraining(assignedEmployeeEmail, moduleName);
 
@@ -42,7 +42,7 @@ describe("OJT Completion Workflow", () => {
       trainingObj.visitApprovalQueue();
       trainingObj.approveTraining(moduleName);
 
-      // Assertion: status becomes approved
+      // Assertion for status to become approved
       trainingObj.visitEmployeeRecord(assignedEmployeeEmail);
       trainingObj.elements
         .trainingStatus(moduleName)
