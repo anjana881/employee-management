@@ -1,0 +1,18 @@
+{
+  "training": {
+    "assignedEmployeeEmail": "anj@gmail.com",
+    "moduleName": "Safety Induction"
+  },
+  "newEmployee": {
+    "firstName": "Anjana",
+    "lastName": "Bhattrai",
+    "email": "anj@gmail.com",
+    "department": "Engineering"
+  },
+  "duplicateEmployee": {
+    "firstName": "Test",
+    "lastName": "User",
+    "email": "anj@gmail.com",
+    "department": "HR"
+  }
+}
