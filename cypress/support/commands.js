@@ -27,9 +27,25 @@
 
  
 
+// Visits the login page, fills credentials, and submits.
+Cypress.Commands.add("login", (username, password) => {
+  cy.visit("/login");
+  cy.get('[data-cy="username"]').type(username);
+  cy.get('[data-cy="password"]').type(password);
+  cy.get('[data-cy="login-btn"]').click();
+});
+
 // Logs in as the supervisor using fixture credentials.
 Cypress.Commands.add("loginAsSupervisor", () => {
   cy.fixture("users").then((users) => {
     cy.login(users.supervisor.username, users.supervisor.password);
+  });
+});
+
+
+// Logs in as the employee using fixture credentials.
+Cypress.Commands.add("loginAsEmployee", () => {
+  cy.fixture("users").then((users) => {
+    cy.login(users.employeeUser.username, users.employeeUser.password);
   });
 });

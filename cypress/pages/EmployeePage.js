@@ -8,8 +8,6 @@ class EmployeePage {
     saveBtn: () => cy.get('[data-cy="employee-save"]'),
     successToast: () => cy.get('[data-cy="toast-success"]'),
     emailError: () => cy.get('[data-cy="employee-email-error"]'),
-    employeeRow: (email) => cy.get(`[data-cy="employee-row-${email}"]`),
-    searchInput: () => cy.get('[data-cy="employee-search"]'),
   };
 
  
@@ -30,12 +28,6 @@ class EmployeePage {
    
   }
 
-  //method to search employee by email
-  searchEmployee(email) {
-    this.elements.searchInput().clear().type(email);
-    
-  }
-
   //method to create employee by filling the form and saving it
   createEmployee(employee) {
     this.visit().openCreateForm().fillEmployeeForm(employee).save();
@@ -43,4 +35,4 @@ class EmployeePage {
   }
 }
 
-export default new EmployeePage();
+export default EmployeePage;

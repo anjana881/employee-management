@@ -1,7 +1,18 @@
 {
+  "supervisor": {
+    "username": "supervisor@gmail.com",
+    "password": "SupervisorPass123"
+  },
+  "employeeUser": {
+    "username": "anj@gmail.com",
+    "password": "EmployeePass123"
+  },
   "training": {
     "assignedEmployeeEmail": "anj@gmail.com",
     "moduleName": "Safety Induction"
+  },
+  "certification": {
+    "expiringCertName": "First Aid"
   },
   "newEmployee": {
     "firstName": "Anjana",
